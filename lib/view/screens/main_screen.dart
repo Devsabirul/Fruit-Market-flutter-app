@@ -3,6 +3,7 @@ import 'package:fruitmarket/constants.dart';
 import 'package:fruitmarket/view/screens/bottomnavbar_screen/home_screen.dart';
 import 'package:fruitmarket/view/screens/bottomnavbar_screen/myaccount_screen.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MainScreenView extends StatefulWidget {
   const MainScreenView({super.key});
@@ -21,7 +22,16 @@ class _MainScreenViewState extends State<MainScreenView> {
     MyAccountScreenView(),
   ];
 
-  
+  @override
+  void initState() {
+    saveLoginInfo();
+    super.initState();
+  }
+
+  void saveLoginInfo() async {
+    var prefs = await SharedPreferences.getInstance();
+    prefs.setBool("isLoggedIn", true);
+  }
 
   @override
   Widget build(BuildContext context) {

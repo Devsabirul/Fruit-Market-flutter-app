@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fruitmarket/view/screens/auth/login_screen.dart';
 import '../view/screens/myorder.dart';
+import '../view/screens/auth/logout_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MyAccountnavList {
   String? title;
@@ -48,6 +51,6 @@ List<MyAccountnavList> contents = [
   MyAccountnavList(
     title: "Log Out",
     icon: "assets/images/icons/logout.png",
-    route: MyOrderview(),
+    route: LoginScreen(),
   ),
 ];

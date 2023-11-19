@@ -108,7 +108,6 @@ class MyAccountScreenView extends StatelessWidget {
                           onTap: () {
                             Get.to(contents[index].route!,
                                 transition: Transition.rightToLeft);
-                            print(contents[index].route!);
                           },
                           child: Row(
                             children: [

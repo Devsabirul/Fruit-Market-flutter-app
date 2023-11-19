@@ -61,7 +61,7 @@ class SignUpScreen extends StatelessWidget {
                           color: secondaryColor,
                           width: 1,
                         ),
-                        fixedSize: Size(MediaQuery.of(context).size.width, 55),
+                        fixedSize: Size(MediaQuery.of(context).size.width, 52),
                         backgroundColor: Colors.white,
                       ),
                       child: const Align(
@@ -99,7 +99,7 @@ class SignUpScreen extends StatelessWidget {
                               width: 1,
                             ),
                             fixedSize: Size(
-                                MediaQuery.of(context).size.width * 0.42, 55),
+                                MediaQuery.of(context).size.width * 0.42, 45),
                             backgroundColor: Colors.white,
                           ),
                           child: Row(
@@ -131,7 +131,7 @@ class SignUpScreen extends StatelessWidget {
                               width: 1,
                             ),
                             fixedSize: Size(
-                                MediaQuery.of(context).size.width * 0.42, 55),
+                                MediaQuery.of(context).size.width * 0.42, 45),
                             backgroundColor: Colors.white,
                           ),
                           child: Row(

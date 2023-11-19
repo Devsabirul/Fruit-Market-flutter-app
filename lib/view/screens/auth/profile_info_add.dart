@@ -42,6 +42,8 @@ class ProfileInfoAddScreen extends StatelessWidget {
                     ),
                     cursorColor: Colors.grey,
                     decoration: const InputDecoration(
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 12, vertical: 16),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           width: 1,
@@ -59,7 +61,7 @@ class ProfileInfoAddScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 25,
+                    height: 22,
                   ),
                   const Text(
                     "Add Address",

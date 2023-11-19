@@ -1,10 +1,10 @@
 import 'dart:async';
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:fruitmarket/constants.dart';
 import 'package:fruitmarket/view/screens/main_screen.dart';
 import 'package:get/get.dart';
 import 'onboarding/onboarding_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,10 +14,11 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  bool is_logged_in = true;
+  bool is_logged_in = false;
 
   @override
   void initState() {
+    getIsLoggedIn();
     super.initState();
     Timer(const Duration(seconds: 3), () {
       if (is_logged_in) {
@@ -26,6 +27,12 @@ class _SplashScreenState extends State<SplashScreen> {
         Get.off(const OnboardingScreen(), transition: Transition.rightToLeft);
       }
     });
+  }
+
+  void getIsLoggedIn() async {
+    var prefs = await SharedPreferences.getInstance();
+    var loginValue = prefs.getBool('isLoggedIn');
+    is_logged_in = loginValue ?? false;
   }
 
   @override
